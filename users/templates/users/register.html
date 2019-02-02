@@ -1,5 +1,6 @@
 <!-- Will use the main template by extending it here -->
 {% extends "blog/main.html" %}
+{% load crispy_forms_tags %}
 
 <!-- this block will be render in the main html template -->
 {% block content %}
@@ -10,7 +11,7 @@
                 <legend class="border-bottom mb-4">
                     Join Today
                 </legend>
-                {{ form.as_p }}
+                {{ form|crispy }}
             </fieldset>
             <div class="form-group">
                 <button class="btn btn-outline-info" type="submit">Sign Up</button>
