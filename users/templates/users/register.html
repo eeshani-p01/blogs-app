@@ -1,0 +1,23 @@
+<!-- Will use the main template by extending it here -->
+{% extends "blog/main.html" %}
+
+<!-- this block will be render in the main html template -->
+{% block content %}
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">
+                    Join Today
+                </legend>
+                {{ form }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Sign Up</button>
+            </div>
+        </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">Already Have An Account? <a href="#" class="ml-2">Sign In</a></small>
+        </div>
+    </div>
+{% endblock %}
