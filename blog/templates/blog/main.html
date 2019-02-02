@@ -1,0 +1,15 @@
+ <!--Template Inheritance to avoid repetative code -->
+ <!DOCTYPE html>
+<html>
+    <head>
+        {% if title %}
+            <title>Blogs - {{title}}</title>
+        {% else %}
+           <title>Blogs</title>
+        {% endif %}
+    </head>
+    <body>
+        <!-- create a block in which child template will be render -->
+       {% block content %}{% endblock %}
+    </body>
+</html>
