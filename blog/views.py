@@ -1,8 +1,8 @@
 from django.shortcuts import render     # render html templates
 from django.http import HttpResponse    # handle request of user
+from .models import Post
 
 # Data = we have list of dictionary
-
 posts = [
     {
         'author': 'Eeshani Patel',
@@ -22,7 +22,7 @@ posts = [
 def home(request):
     # will create a context,i.e dictionary, to pass the data to home template
     context = {
-        'posts': posts,
+        'posts': Post.objects.all()
     }
     #will return an http response
     return render(request, 'blog/home.html', context)        # args pass request, template name and data(context)
